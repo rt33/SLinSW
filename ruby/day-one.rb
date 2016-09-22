@@ -13,3 +13,15 @@ puts "#{myname}" * 10
   puts "#{i+1}"
 end
 
+# picks a random number. Let a player guess the number, telling the player whether the guess is too low or too high.
+num = rand(10)
+while str = STDIN.gets.chomp
+#   break if str === "exit"
+    break if str.eql?("exit")
+  begin
+    Integer(str)
+    num < str.to_i ? (puts "big one") : (puts "small one")
+  rescue
+    puts "plz enter a number"
+  end
+end
